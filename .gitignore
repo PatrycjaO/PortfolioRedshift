@@ -1,2 +1,6 @@
 *.csv
 .DS_Store
+pulumi/
+quickstart/
+credentials.txt
+stack/
