@@ -9,9 +9,13 @@
 ## 3. Using pulumi, transfer relevant .csv files to S3 bucket
 ## 4. Inside Redshift
 4.1. Create Schema
+
 4.2. Create Tables
+
 4.3. Load .csv files inside created tables
+
 4.4. Create Index, views, materialized views, perform some queries, check timestamp handling
+
 ## 5. open access to RS from local
 ## 6. Create make-file for data ingestion into RS
 ## 7. Connect stack to GitHub and use GitHub Actions
