@@ -1,4 +1,6 @@
-*.csv
+forecastdata.csv
+energydata.csv
+facttable.csv
 .DS_Store
 pulumi/
 quickstart/
