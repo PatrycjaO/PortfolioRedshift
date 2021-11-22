@@ -4,8 +4,8 @@
 ### VPC:
 - S3
 - Redshift
-- EC2 
-## 2. Create IAM roles to enable Redshift to S3 communication
+- (EC2)
+## 2. Create IAM roles to enable communication between Redshift and S3
 ## 3. Using pulumi, transfer relevant .csv files to S3 bucket
 ## 4. Inside Redshift
 4.1. Create Schema
