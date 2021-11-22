@@ -4,3 +4,4 @@ pulumi/
 quickstart/
 credentials.txt
 stack/
+current_workflow
