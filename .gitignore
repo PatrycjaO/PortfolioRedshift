@@ -6,5 +6,6 @@ pulumi/
 quickstart/
 credentials.txt
 stack/
+stack_old/
 current_workflow
 Redshift
