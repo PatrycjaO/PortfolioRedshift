@@ -5,7 +5,7 @@
 - S3
 - Redshift
 - EC2
-- or AWS Lambda
+- AWS Lambda
 ## 2. Create IAM roles to enable communication between Redshift/S3/EC2
 ## 3. Using pulumi, transfer relevant .csv files to S3 bucket (historical, static files first)
 ## 4. Connect GitHub to AWS
