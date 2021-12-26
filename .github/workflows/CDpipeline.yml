@@ -6,7 +6,6 @@ on:
 jobs:
   continuous-deployment:
     runs-on: ubuntu-latest
-    needs: [continuous-integration]
     if: github.ref == 'refs/heads/main'
     steps:
      # Step 1
