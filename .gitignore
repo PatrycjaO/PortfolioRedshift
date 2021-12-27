@@ -8,4 +8,5 @@ credentials.txt
 stack/
 stack_old/
 current_workflow
-Redshift
+old/
+Redshift/
