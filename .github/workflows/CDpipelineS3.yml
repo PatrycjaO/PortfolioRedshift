@@ -1,0 +1,24 @@
+# https://github.com/marketplace/actions/s3-sync
+# https://medium.com/geekculture/ci-cd-pipeline-setup-using-github-actions-and-aws-252116451a1b
+name: CD S3
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }} # the name of the bucket you are syncing to
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}   # optional: defaults to us-east-1
+        SOURCE_DIR: 'public'      # The local directory or file you wish to sync/upload to s´S3, optional: defaults to entire repository
+        DEST_DIR: / # The directory inside of the S3 bucket you wish to sync/upload to, here root of bucket
