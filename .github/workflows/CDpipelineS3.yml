@@ -4,8 +4,7 @@ name: CD S3
 
 on:
   push:
-    branches:
-    - master
+    branches: [ main ] # the workflow will be triggered when commit code is pushed to the main branch in the repository
 
 jobs:
   deploy:
