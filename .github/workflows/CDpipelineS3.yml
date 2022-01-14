@@ -21,4 +21,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}   # optional: defaults to us-east-1
         SOURCE_DIR: 'public'      # The local directory or file you wish to sync/upload to s´S3, optional: defaults to entire repository
-        DEST_DIR: / # The directory inside of the S3 bucket you wish to sync/upload to, here root of bucket
+        # DEST_DIR: / # The directory inside of the S3 bucket you wish to sync/upload to, here root of bucket
