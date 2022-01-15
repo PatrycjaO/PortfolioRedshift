@@ -1,5 +1,6 @@
 # https://github.com/marketplace/actions/s3-sync
 # https://medium.com/geekculture/ci-cd-pipeline-setup-using-github-actions-and-aws-252116451a1b
+# https://faun.pub/deploying-website-to-aws-s3-w-github-actions-279998db5dae
 name: CD S3
 
 on:
