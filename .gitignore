@@ -9,4 +9,7 @@ stack/
 stack_old/
 current_workflow
 old/
-Redshift/
+Redshift/main.py
+Redshift/import.sql
+Redshift/continuous_create.sql
+Redshift/join.sql
