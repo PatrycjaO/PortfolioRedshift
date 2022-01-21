@@ -1,4 +1,6 @@
-# PortfolioRedshift
+# --- Work in progress ---
+#
+#PortfolioRedshift
 ##### Goal: set up similar project as PortfolioPipeline (see https://github.com/PatrycjaO/PipelineProject), but based on AWS
 ## 1. Create a minimum AWS stack using infrastructure as code - Pulumi
 ### VPC:
