@@ -4,7 +4,9 @@ import psycopg2.extras
 
 def write2database():
 
-    REGION, ARN, DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT = credentials()
+    REGION, BUCKET, ARNRSS3, DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT = credentials()
+
+    copy = "COPY wind.facttable FROM 's3://" +BUCKET +"/lookup_table/locations.csv' IAM_ROLE '" +ARNRSS3 +"' DELIMITER ',' CSV IGNOREHEADER AS 1 IGNOREBLANKLINES;"
 
     try:
 
@@ -33,15 +35,7 @@ def write2database():
         print('Table not created')
 
     try:
-        cursor.execute("""
-        COPY wind.facttable
-        FROM 's3://???/lookup_table/locations.csv'
-        IAM_ROLE 'arn:aws:iam::???:role/RedshiftS3'
-        DELIMITER ','
-        CSV
-        IGNOREHEADER AS 1
-        IGNOREBLANKLINES;
-        """) 
+        cursor.execute(copy) 
 
         print("Write successfull!")
 

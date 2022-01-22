@@ -6,7 +6,9 @@ import psycopg2.extras
 
 def write2database():
 
-    REGION, ARN, DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT = credentials()
+    REGION, BUCKET, ARNRSS3, DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT = credentials()
+
+    copy = "COPY wind.energydata FROM 's3://" +BUCKET +"/monitor_data/live_energydata.csv' IAM_ROLE '" +ARNRSS3 +"' DELIMITER ',' CSV IGNOREHEADER AS 1 IGNOREBLANKLINES;" 
     
     try:
         conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT)
@@ -33,15 +35,8 @@ def write2database():
         print('Table not created')
     
     try:
-        cursor.execute("""
-        COPY wind.energydata
-        FROM 's3://???/monitor_data/live_energydata.csv'
-        IAM_ROLE 'arn:aws:iam::???:role/RedshiftS3'
-        DELIMITER ','
-        CSV
-        IGNOREHEADER AS 1
-        IGNOREBLANKLINES;
-        """) 
+        cursor.execute(copy) 
+
         print("Write successfull!")
 
     except:
