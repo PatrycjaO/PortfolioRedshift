@@ -1,4 +1,4 @@
-# --- Work in progres ---
+# --- Work in progress ---
 #
 # PortfolioRedshift
 ##### Goal: set up similar project as PortfolioPipeline (see https://github.com/PatrycjaO/PipelineProject), but based on AWS
