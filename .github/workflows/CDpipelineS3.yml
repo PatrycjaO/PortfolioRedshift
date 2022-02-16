@@ -7,7 +7,7 @@ on:
   push:
     branches: [ main ] # the workflow will be triggered when commit code is pushed to the main branch in the repository
   workflow_run: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
-    workflows: [api.yml, scrape.yml]
+    workflows: [Scrape latest data, API access weather forecast]
     types:
       - completed
 
