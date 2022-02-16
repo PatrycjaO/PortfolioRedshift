@@ -3,6 +3,10 @@
 from credentials import credentials
 import psycopg2
 import psycopg2.extras
+import prefect
+from prefect import task, Flow
+
+@task
 
 def write2database():
 
@@ -50,3 +54,6 @@ try:
     write2database()
 except:
     print("Error writing csv to database")
+
+flow = Flow("postgres_monitor", tasks=[write2database])
+flow.register(project_name="Redshift")
