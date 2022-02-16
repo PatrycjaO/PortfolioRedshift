@@ -6,8 +6,8 @@ name: CD S3
 on:
   push:
     branches: [ main ] # the workflow will be triggered when commit code is pushed to the main branch in the repository
-  workflow_run:
-    workflows: [api, scrape]
+  workflow_run: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+    workflows: [api.yml, scrape.yml]
     types:
       - completed
 
