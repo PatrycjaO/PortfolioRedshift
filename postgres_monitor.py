@@ -7,7 +7,6 @@ import prefect
 from prefect import task, Flow
 
 @task
-
 def write2database():
 
     REGION, BUCKET, ARNRSS3, DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT = credentials()
