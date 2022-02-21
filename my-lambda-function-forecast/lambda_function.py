@@ -16,29 +16,7 @@ def lambda_handler(event, context):
         print('Connection failed')
 
     cursor = conn.cursor()
-    
-    try:
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS wind.forecastdata (
-          timestamp integer,
-          regionid integer NOT NULL,
-          temperature_c real,
-          wind_speed_m_per_s real,
-          wind_direction real,
-          wind_gust real,
-          cloudcover_pct real,
-          weathercode integer
-        );
-        
-        """)
-        print('Table created')
-        
-        conn.commit()
-        print("cursor committed")
-        
-    except:
-        print('Table not created')
-    
+
     try:
         cursor.execute(copy) 
         print("Write successfull!")
@@ -55,7 +33,7 @@ def lambda_handler(event, context):
     print("cursor closed")
     
     conn.close()
-    print("connecion closed")
+    print("connection closed")
     return {
         'statusCode': 200,
         'body': json.dumps('Hello from Lambda!')
