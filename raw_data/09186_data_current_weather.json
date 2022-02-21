@@ -1,8 +1,8 @@
 {
     "weather": {
-        "temperature": 5.6,
-        "windSpeed": 7.5,
-        "cloudCover": 0.976,
+        "temperature": 5,
+        "windSpeed": 7.2,
+        "cloudCover": 0.982,
         "icon": "4"
     }
 }
