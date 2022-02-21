@@ -6,6 +6,8 @@ import json
 import os
 
 def lambda_handler(event, context):
+
+    # print("Received event: " + json.dumps(event, indent=2))
     
     copy = "COPY wind.energydata FROM 's3://" +os.environ.get("BUCKET") +"/monitor_data/live_energydata.csv' IAM_ROLE '" +os.environ.get("ARNRSS3") +"' DELIMITER ',' CSV IGNOREHEADER AS 1 IGNOREBLANKLINES;"
     
@@ -16,27 +18,8 @@ def lambda_handler(event, context):
         print('Connection failed')
 
     cursor = conn.cursor()
-    
-    try:
-        cursor.execute("""
-        CREATE TABLE IF NOT EXISTS wind.energydata (
-        timestamp integer,
-        regionid integer NOT NULL,
-        windpower_kwh real,
-        solarpower_kwh real,
-        windSpeed_m_per_s real,
-        cloudcover_pct real,
-        temperature_c real
-        );
-        """)
-        print('Table created')
-        
-        conn.commit()
-        print("cursor committed")
-        
-    except:
-        print('Table not created')
-    
+
+   
     try:
         cursor.execute(copy) 
         print("Write successfull!")
@@ -53,8 +36,9 @@ def lambda_handler(event, context):
     print("cursor closed")
     
     conn.close()
-    print("connecion closed")
+    print("connection closed")
     return {
         'statusCode': 200,
         'body': json.dumps('Hello from Lambda!')
     }
+
