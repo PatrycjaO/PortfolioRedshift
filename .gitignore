@@ -9,10 +9,5 @@ stack/
 stack_old/
 current_workflow
 old/
-Redshift/main.py
-Redshift/import.sql
-Redshift/continuous_create.sql
-Redshift/join.sql
-Redshift/create.sql
-Redshift/postgres_facttable_test.py
+Redshift/
 __pycache__/
